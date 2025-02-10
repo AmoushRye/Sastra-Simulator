@@ -1,0 +1,345 @@
+{
+  "attr": [
+    {
+      "name": "schema",
+      "stringVal": "1.0.2-chakra.0.0.4"
+    },
+    {
+      "name": "input_file",
+      "stringVal": "MODEL\t\t\t\t\t\t\t\t\t\t\t\n6\t\t\t\t\t\t\t\t\t\t\t\nlayer_64_1_mlp0\t-1\t32291\tALLGATHER\t37632\t32291\tALLREDUCE\t37632\t12864\tNONE\t0\t3229\nlayer_64_1_mlp1\t-1\t7488\tALLGATHER\t65536\t7488\tALLREDUCE\t65536\t3648\tNONE\t0\t749\nlayer_64_1_mlp2\t-1\t7488\tALLGATHER\t65536\t7488\tALLREDUCE\t65536\t3456\tNONE\t0\t749\nlayer_64_1_mlp3\t-1\t14144\tALLGATHER\t147456\t14144\tALLREDUCE\t147456\t10368\tNONE\t0\t1414\nlayer_64_1_mlp4\t-1\t7488\tALLGATHER\t65536\t7488\tALLREDUCE\t65536\t3648\tNONE\t0\t749\nlayer_64_2_mlp5\t-1\t9984\tALLGATHER\t65536\t9984\tALLREDUCE\t65536\t3456\tNONE\t0\t998"
+    }
+  ]
+}{
+  "id": "87",
+  "name": "COMP_NODE_layer_64_1_mlp0_FWD",
+  "type": "COMP_NODE",
+  "durationMicros": "32291"
+}{
+  "id": "88",
+  "name": "COMM_COLL_NODE_layer_64_1_mlp0_ALLGATHER",
+  "type": "COMM_COLL_NODE",
+  "dataDeps": [
+    "87"
+  ],
+  "attr": [
+    {
+      "name": "comm_type",
+      "int64Val": "2"
+    },
+    {
+      "name": "comm_size",
+      "int64Val": "37632"
+    }
+  ]
+}{
+  "id": "89",
+  "name": "COMP_NODE_layer_64_1_mlp1_FWD",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "88"
+  ],
+  "durationMicros": "7488"
+}{
+  "id": "90",
+  "name": "COMM_COLL_NODE_layer_64_1_mlp1_ALLGATHER",
+  "type": "COMM_COLL_NODE",
+  "dataDeps": [
+    "89"
+  ],
+  "attr": [
+    {
+      "name": "comm_type",
+      "int64Val": "2"
+    },
+    {
+      "name": "comm_size",
+      "int64Val": "65536"
+    }
+  ]
+}{
+  "id": "91",
+  "name": "COMP_NODE_layer_64_1_mlp2_FWD",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "90"
+  ],
+  "durationMicros": "7488"
+}{
+  "id": "92",
+  "name": "COMM_COLL_NODE_layer_64_1_mlp2_ALLGATHER",
+  "type": "COMM_COLL_NODE",
+  "dataDeps": [
+    "91"
+  ],
+  "attr": [
+    {
+      "name": "comm_type",
+      "int64Val": "2"
+    },
+    {
+      "name": "comm_size",
+      "int64Val": "65536"
+    }
+  ]
+}{
+  "id": "93",
+  "name": "COMP_NODE_layer_64_1_mlp3_FWD",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "92"
+  ],
+  "durationMicros": "14144"
+}{
+  "id": "94",
+  "name": "COMM_COLL_NODE_layer_64_1_mlp3_ALLGATHER",
+  "type": "COMM_COLL_NODE",
+  "dataDeps": [
+    "93"
+  ],
+  "attr": [
+    {
+      "name": "comm_type",
+      "int64Val": "2"
+    },
+    {
+      "name": "comm_size",
+      "int64Val": "147456"
+    }
+  ]
+}{
+  "id": "95",
+  "name": "COMP_NODE_layer_64_1_mlp4_FWD",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "94"
+  ],
+  "durationMicros": "7488"
+}{
+  "id": "96",
+  "name": "COMM_COLL_NODE_layer_64_1_mlp4_ALLGATHER",
+  "type": "COMM_COLL_NODE",
+  "dataDeps": [
+    "95"
+  ],
+  "attr": [
+    {
+      "name": "comm_type",
+      "int64Val": "2"
+    },
+    {
+      "name": "comm_size",
+      "int64Val": "65536"
+    }
+  ]
+}{
+  "id": "97",
+  "name": "COMP_NODE_layer_64_2_mlp5_FWD",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "96"
+  ],
+  "durationMicros": "9984"
+}{
+  "id": "98",
+  "name": "COMM_COLL_NODE_layer_64_2_mlp5_ALLGATHER",
+  "type": "COMM_COLL_NODE",
+  "dataDeps": [
+    "97"
+  ],
+  "attr": [
+    {
+      "name": "comm_type",
+      "int64Val": "2"
+    },
+    {
+      "name": "comm_size",
+      "int64Val": "65536"
+    }
+  ]
+}{
+  "id": "99",
+  "name": "COMP_NODE_layer_64_2_mlp5_BWD_IG",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "98"
+  ],
+  "durationMicros": "9984"
+}{
+  "id": "100",
+  "name": "COMM_COLL_NODE_layer_64_2_mlp5_ALLREDUCE",
+  "type": "COMM_COLL_NODE",
+  "dataDeps": [
+    "99"
+  ],
+  "attr": [
+    {
+      "name": "comm_type",
+      "int64Val": "0"
+    },
+    {
+      "name": "comm_size",
+      "int64Val": "65536"
+    }
+  ]
+}{
+  "id": "101",
+  "name": "COMP_NODE_layer_64_2_mlp5_BWD_WG",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "99"
+  ],
+  "durationMicros": "3456"
+}{
+  "id": "102",
+  "name": "COMP_NODE_layer_64_1_mlp4_BWD_IG",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "101",
+    "100"
+  ],
+  "durationMicros": "7488"
+}{
+  "id": "103",
+  "name": "COMM_COLL_NODE_layer_64_1_mlp4_ALLREDUCE",
+  "type": "COMM_COLL_NODE",
+  "dataDeps": [
+    "102"
+  ],
+  "attr": [
+    {
+      "name": "comm_type",
+      "int64Val": "0"
+    },
+    {
+      "name": "comm_size",
+      "int64Val": "65536"
+    }
+  ]
+}{
+  "id": "104",
+  "name": "COMP_NODE_layer_64_1_mlp4_BWD_WG",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "102"
+  ],
+  "durationMicros": "3648"
+}{
+  "id": "105",
+  "name": "COMP_NODE_layer_64_1_mlp3_BWD_IG",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "104",
+    "103"
+  ],
+  "durationMicros": "14144"
+}{
+  "id": "106",
+  "name": "COMM_COLL_NODE_layer_64_1_mlp3_ALLREDUCE",
+  "type": "COMM_COLL_NODE",
+  "dataDeps": [
+    "105"
+  ],
+  "attr": [
+    {
+      "name": "comm_type",
+      "int64Val": "0"
+    },
+    {
+      "name": "comm_size",
+      "int64Val": "147456"
+    }
+  ]
+}{
+  "id": "107",
+  "name": "COMP_NODE_layer_64_1_mlp3_BWD_WG",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "105"
+  ],
+  "durationMicros": "10368"
+}{
+  "id": "108",
+  "name": "COMP_NODE_layer_64_1_mlp2_BWD_IG",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "107",
+    "106"
+  ],
+  "durationMicros": "7488"
+}{
+  "id": "109",
+  "name": "COMM_COLL_NODE_layer_64_1_mlp2_ALLREDUCE",
+  "type": "COMM_COLL_NODE",
+  "dataDeps": [
+    "108"
+  ],
+  "attr": [
+    {
+      "name": "comm_type",
+      "int64Val": "0"
+    },
+    {
+      "name": "comm_size",
+      "int64Val": "65536"
+    }
+  ]
+}{
+  "id": "110",
+  "name": "COMP_NODE_layer_64_1_mlp2_BWD_WG",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "108"
+  ],
+  "durationMicros": "3456"
+}{
+  "id": "111",
+  "name": "COMP_NODE_layer_64_1_mlp1_BWD_IG",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "110",
+    "109"
+  ],
+  "durationMicros": "7488"
+}{
+  "id": "112",
+  "name": "COMM_COLL_NODE_layer_64_1_mlp1_ALLREDUCE",
+  "type": "COMM_COLL_NODE",
+  "dataDeps": [
+    "111"
+  ],
+  "attr": [
+    {
+      "name": "comm_type",
+      "int64Val": "0"
+    },
+    {
+      "name": "comm_size",
+      "int64Val": "65536"
+    }
+  ]
+}{
+  "id": "113",
+  "name": "COMP_NODE_layer_64_1_mlp1_BWD_WG",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "111"
+  ],
+  "durationMicros": "3648"
+}{
+  "id": "114",
+  "name": "COMP_NODE_layer_64_1_mlp0_BWD_IG",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "113",
+    "112"
+  ],
+  "durationMicros": "32291"
+}{
+  "id": "115",
+  "name": "COMP_NODE_layer_64_1_mlp0_BWD_WG",
+  "type": "COMP_NODE",
+  "dataDeps": [
+    "114"
+  ],
+  "durationMicros": "12864"
+}
